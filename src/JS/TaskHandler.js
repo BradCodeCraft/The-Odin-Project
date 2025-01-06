@@ -3,6 +3,9 @@ export const TaskHandler = {
   todayToDoList: [],
   upcomingToDoList: [],
   archiveToDoList: [],
+  personalToDoList: [],
+  professionalToDoList: [],
+  miscellaneousToDoList: [],
   getToDoList: function() {
     let storage;
 
@@ -40,10 +43,15 @@ export const TaskHandler = {
     this.todoList = this.todoList.filter((task) => task.id !== taskId);
     this.setToDoList();
     this.getToDoList();
+    this.getTodayToDoList();
+    this.getUpcomingToDoList();
+    this.getArchiveToDoList();
+    this.getPersonalToDoList();
+    this.getProfessionalToDoList();
+    this.getMiscellaneousToDoList();
   },
   updateTask: function(task) {
     this.todoList[task.id - 1] = task;
-    console.log(this.todoList);
     this.setToDoList();
     this.getToDoList();
   },
@@ -79,6 +87,28 @@ export const TaskHandler = {
     });
   },
   getArchiveToDoList: function() {
-    this.archiveToDoList = this.todoList.filter((task) => task.status === "Completed");
+    const today = new Date();
+    const todayDay = today.getDate().toString().length === 1 ?
+      "0" + today.getDate().toString() :
+      today.getDate();
+    const todayMonth = (today.getMonth() + 1).toString().length === 1 ?
+      "0" + (today.getMonth() + 1) :
+      (today.getMonth() + 1).toString();
+
+    this.archiveToDoList = this.todoList.filter((task) => {
+      return task.status === "Completed" ||
+        task.dueDate.year < today.getFullYear().toString() ||
+        task.dueDate.month < todayMonth ||
+        task.dueDate.day < todayDay;
+    });
   },
+  getPersonalToDoList: function() {
+    this.personalToDoList = this.todoList.filter((task) => task.project === "personal");
+  },
+  getProfessionalToDoList: function() {
+    this.professionalToDoList = this.todoList.filter((task) => task.project === "professional");
+  },
+  getMiscellaneousToDoList: function() {
+    this.miscellaneousToDoList = this.todoList.filter((task) => task.project === "miscellaneous");
+  }
 }

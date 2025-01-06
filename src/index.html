@@ -14,8 +14,6 @@
       <header>
         <img src="assets/Task.png" alt="TaskTidy" class="nav-header-logo">
         <h1>TaskTidy</h1>
-        <img src="assets/bell.svg" alt="Notifications" width="25" height="25" class="nav-header-bell icon">
-        <img src="assets/arrow-expand-left.svg" alt="Collapse" width="25" height="25" class="nav-header-expand icon">
       </header>
 
       <main>
@@ -46,14 +44,14 @@
         <div class="main-mid">
           <h1>Projects</h1>
           <ul class="projects">
-            <li>
-              <h2>A</h2>
+            <li id="personal" class="main-groups">
+              <h2>Personal</h2>
             </li>
-            <li>
-              <h2>B</h2>
+            <li id="professional" class="main-groups">
+              <h2>Professional</h2>
             </li>
-            <li>
-              <h2>C</h2>
+            <li id="miscellaneous" class="main-groups">
+              <h2>Miscellaneous</h2>
             </li>
           </ul>
         </div>
@@ -190,6 +188,7 @@
 
         <main class="content-main">
           <div class="content-list">
+            <!--
             <div class="content-list-item-card">
               <h2>Title: Task 1</h2>
               <p>Due Date: Jan 25th</p>
@@ -207,6 +206,7 @@
                 <button class="delete-task-button">Delete</button>
               </div>
             </div>
+            -->
           </div>
       </div>
 
@@ -217,6 +217,7 @@
 
         <main class="content-main">
           <div class="content-list">
+            <!--
             <div class="content-list-item-card">
               <h2>Title: Task 1</h2>
               <p>Due Date: Jan 25th</p>
@@ -234,6 +235,94 @@
                 <button class="delete-task-button">Delete</button>
               </div>
             </div>
+            -->
+          </div>
+      </div>
+
+      <div class="personal-page hidden">
+        <header>
+          <h1>Personal</h1>
+        </header>
+
+        <main class="content-main">
+          <div class="content-list">
+            <!--
+            <div class="content-list-item-card">
+              <h2>Title: Task 1</h2>
+              <p>Due Date: Jan 25th</p>
+              <div class="content-list-item-card-buttons">
+                <button class="edit-task-button">Edit</button>
+                <button class="delete-task-button">Delete</button>
+              </div>
+            </div>
+
+            <div class="content-list-item-card">
+              <h2>Title: Task 1</h2>
+              <p>Due Date: Jan 25th</p>
+              <div class="content-list-item-card-buttons">
+                <button class="edit-task-button">Edit</button>
+                <button class="delete-task-button">Delete</button>
+              </div>
+            </div>
+            -->
+          </div>
+      </div>
+
+      <div class="professional-page hidden">
+        <header>
+          <h1>Professional</h1>
+        </header>
+
+        <main class="content-main">
+          <div class="content-list">
+            <!--
+            <div class="content-list-item-card">
+              <h2>Title: Task 1</h2>
+              <p>Due Date: Jan 25th</p>
+              <div class="content-list-item-card-buttons">
+                <button class="edit-task-button">Edit</button>
+                <button class="delete-task-button">Delete</button>
+              </div>
+            </div>
+
+            <div class="content-list-item-card">
+              <h2>Title: Task 1</h2>
+              <p>Due Date: Jan 25th</p>
+              <div class="content-list-item-card-buttons">
+                <button class="edit-task-button">Edit</button>
+                <button class="delete-task-button">Delete</button>
+              </div>
+            </div>
+            -->
+          </div>
+      </div>
+
+      <div class="miscellaneous-page hidden">
+        <header>
+          <h1>Miscellaneous</h1>
+        </header>
+
+        <main class="content-main">
+          <div class="content-list">
+            <!--
+            <div class="content-list-item-card">
+              <h2>Title: Task 1</h2>
+              <p>Due Date: Jan 25th</p>
+              <div class="content-list-item-card-buttons">
+                <button class="edit-task-button">Edit</button>
+                <button class="delete-task-button">Delete</button>
+              </div>
+            </div>
+
+            <div class="content-list-item-card">
+              <h2>Title: Task 1</h2>
+              <p>Due Date: Jan 25th</p>
+              <div class="content-list-item-card-buttons">
+                <button class="edit-task-button">Edit</button>
+                <button class="delete-task-button">Delete</button>
+              </div>
+            </div>
+            -->
           </div>
       </div>
     </div>
@@ -252,7 +341,11 @@
         <label for="taskProject">
           <h3>Project:</h3>
         </label>
-        <input type="text" id="taskProject" name="taskProject" placeholder="Enter project name">
+        <select name="taskPriority" id="taskPriority">
+          <option value="personal">Personal</option>
+          <option value="professional">Professional</option>
+          <option value="miscellaneous">Miscellaneous</option>
+        </select>
         <label for="taskDueDate">
           <h3>Due Date</h3>
         </label>
@@ -288,7 +381,11 @@
         <label for="taskProject">
           <h3>Project:</h3>
         </label>
-        <input type="text" id="taskProject" name="taskProject" placeholder="Enter project name">
+        <select name="taskPriority" id="taskPriority">
+          <option value="personal">Personal</option>
+          <option value="professional">Professional</option>
+          <option value="miscellaneous">Miscellaneous</option>
+        </select>
         <label for="taskDueDate">
           <h3>Due Date</h3>
         </label>
